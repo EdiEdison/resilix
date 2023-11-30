@@ -39,11 +39,22 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "main",
     "rest_framework",
+    "rest_framework.authtoken",
     "django_twilio",
+    "django_google_maps",
+    "drf_yasg",
 ]
 
 
+# Google api key : AIzaSyB-qnuASwVQSvcWwdXdCyLNWO7-uu1ATVE
+
 AUTH_USER_MODEL = "main.CustomUser"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -53,6 +64,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "resilix.urls"
@@ -127,3 +139,13 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+OPENAI_API_KEY = "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"
+
+# Twilio details
+
+ACCOUNT_SID = "ACc90b80635decd3f5aeebc1e8c23bfec4"
+AUTH_TOKEN = "435496964962f3e2d45c104b870f7705"
+COUNTRY_CODE = "+237"
+TWILIO_PHONE_NUMBER = "+12512765445"
