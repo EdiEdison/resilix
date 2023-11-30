@@ -10,7 +10,7 @@ import openai
 class AlertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Alert
-        fields = "__all__"
+        fields = ["alert_type", "description", "location"]
 
     def get_first_aid_response(self, alert_description):
         openai.api_key = "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"
