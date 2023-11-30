@@ -84,6 +84,7 @@ TEMPLATES = [
         },
     },
 ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 WSGI_APPLICATION = "resilix.wsgi.application"
 
